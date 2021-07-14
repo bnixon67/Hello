@@ -24,6 +24,12 @@ import (
 func main() {
 	fmt.Println("Hello Go World!")
 
+	executable, err := os.Executable()
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Printf("Executable = %s\n", executable)
+
 	for n := 0; n < len(os.Args); n++ {
 		fmt.Printf("Args[%d] = %s\n", n, os.Args[n])
 	}
